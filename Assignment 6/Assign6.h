@@ -25,16 +25,15 @@ void copy(string filename)
 {
 
   ifstream myfilein;
-  myfilein.open(filename);
+  myfilein.open("poems.txt");
 
   ofstream myfileout;
-  myfileout.open("poems.txt");
-  char a;
+  myfileout.open(filename);
+  string newStr;
 
-  while(myfilein)
+  while(getline(myfilein, newStr))
   {
-    myfilein.get(a);
-    myfileout<<a;
+    myfileout<<newStr;
   }
   myfilein.close();
 }
